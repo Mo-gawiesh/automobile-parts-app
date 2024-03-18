@@ -18,13 +18,12 @@ app.use(cors());
 // MongoDB Connection
 const mongoURI = 'mongodb://localhost:27017/automobilePartsDB'; // Replace 'automobilePartsDB' with your database name
 mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-})
-.then(() => console.log('MongoDB Connected'))
-.catch(err => console.error('MongoDB connection error:', err));
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+  
 
 // Basic route
 app.get('/', (req, res) => res.send('Hello from the Automobile Parts server!'));
